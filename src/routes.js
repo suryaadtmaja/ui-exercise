@@ -2,6 +2,7 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import NotFound from "./views/NotFound.vue";
 import Sidebar from "./views/Sidebar.vue";
+import TeamSection from "./views/TeamSection.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
@@ -21,6 +22,13 @@ export const routes = [
       title: "Sidebar",
     },
     component: Sidebar,
+  },
+  {
+    path: "/teams",
+    meta: {
+      title: "Team Section",
+    },
+    component: TeamSection,
   },
   { path: "/:path(.*)", component: NotFound },
 ];
