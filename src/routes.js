@@ -4,6 +4,7 @@ import NotFound from "./views/NotFound.vue";
 import Sidebar from "./views/Sidebar.vue";
 import TeamSection from "./views/TeamSection.vue";
 import LoginPage from "./views/Login.vue";
+import SupportPage from "./views/Support.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
@@ -37,6 +38,13 @@ export const routes = [
       title: "Login Page",
     },
     component: LoginPage,
+  },
+  {
+    path: "/support",
+    meta: {
+      title: "Contact Support",
+    },
+    component: SupportPage,
   },
   { path: "/:path(.*)", component: NotFound },
 ];
