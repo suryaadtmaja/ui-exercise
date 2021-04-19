@@ -3,15 +3,15 @@ import About from "./views/About.vue";
 import NotFound from "./views/NotFound.vue";
 import Sidebar from "./views/Sidebar.vue";
 import TeamSection from "./views/TeamSection.vue";
-import LoginPage from "./views/Login.vue";
 import SupportPage from "./views/Support.vue";
+import Login from "./views/Login.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
   { path: "/", component: Home, meta: { title: "Home" } },
   {
     path: "/about",
-    meta: { title: "About" },
+    meta: { title: "About", layout: "AppLayout" },
     component: About,
     // example of route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route
@@ -22,6 +22,7 @@ export const routes = [
     path: "/sidebar",
     meta: {
       title: "Sidebar",
+      layout: "AppLayoutHome",
     },
     component: Sidebar,
   },
@@ -29,6 +30,7 @@ export const routes = [
     path: "/teams",
     meta: {
       title: "Team Section",
+      layout: "AppLayoutHome",
     },
     component: TeamSection,
   },
@@ -36,13 +38,15 @@ export const routes = [
     path: "/login",
     meta: {
       title: "Login Page",
+      layout: "AppLayoutLogin",
     },
-    component: LoginPage,
+    component: Login,
   },
   {
     path: "/support",
     meta: {
       title: "Contact Support",
+      layout: "AppLayoutHome",
     },
     component: SupportPage,
   },
