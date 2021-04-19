@@ -21,15 +21,17 @@
       class="card mt-4 flex flex-col space-y-4 px-8 py-8 w-1/3 rounded-lg bg-white border border-gray-200 items-center justify-center"
     >
       <div class="flex flex-col w-full">
-        <p class="text-gray-700 text-sm">Email address</p>
+        <label id="email" class="text-gray-700 text-sm">Email address</label>
         <input
+          aria-labelledby="email"
           type="text"
           class="rounded border-gray-300 bg-white shadow outline-none border-opacity-75 focus:outline-none focus:ring"
         />
       </div>
       <div class="flex flex-col w-full">
-        <p class="text-gray-700 text-sm">Password</p>
+        <label id="password" class="text-gray-700 text-sm">Password</label>
         <input
+          aria-labelledby="password"
           type="password"
           class="rounded border-gray-300 bg-white shadow border-opacity-75 outline-none focus:outline-none focus:ring"
         />
@@ -38,12 +40,20 @@
       <div class="flex w-full justify-between">
         <div class="flex space-x-2 items-center">
           <input
+            aria-labelledby="remember-me"
             type="checkbox"
             class="rounded border-gray-300 border-opacity-75 bg-white shadow outline-none focus:outline-none focus:ring"
           />
-          <p class="text-sm text-gray-700">Remember me</p>
+          <label id="remember-me" class="text-sm text-gray-700"
+            >Remember me</label
+          >
         </div>
-        <p class="text-blue-700 text-sm">Forgot your password?</p>
+        <button
+          href="#"
+          class="text-blue-700 text-sm outline-none focus:outline-none focus:ring"
+        >
+          Forgot your password?
+        </button>
       </div>
 
       <div class="w-full">
@@ -62,6 +72,7 @@
 
       <div class="w-full flex space-x-2">
         <button
+          aria-label="facebook login"
           class="rounded-lg border-gray-300 flex justify-center items-center border w-1/3 h-10 shadow hover:bg-blue-700 text-gray-500 hover:text-gray-100 outline-none border-opacity-75 focus:outline-none focus:ring"
         >
           <svg
@@ -78,6 +89,7 @@
           </svg>
         </button>
         <button
+          aria-label="twitter login"
           class="hover:bg-blue-700 text-gray-500 hover:text-gray-100 rounded-lg border-gray-300 flex justify-center items-center border w-1/3 h-10 shadow outline-none border-opacity-75 focus:outline-none focus:ring"
         >
           <svg
@@ -94,6 +106,7 @@
           </svg>
         </button>
         <button
+          aria-label="google login"
           class="hover:bg-blue-700 text-gray-500 hover:text-gray-100 rounded-lg border-gray-300 flex justify-center items-center border w-1/3 h-10 shadow border-opacity-75 outline-none focus:outline-none focus:ring"
         >
           <svg
