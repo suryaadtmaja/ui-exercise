@@ -5,13 +5,74 @@ import Sidebar from "./views/Sidebar.vue";
 import TeamSection from "./views/TeamSection.vue";
 import SupportPage from "./views/Support.vue";
 import Login from "./views/Login.vue";
+import DashboardPage from "./views/Dashboard.vue";
+
+import LayoutDashboard from "./layouts/AppLayoutDashboard.vue";
+import LayoutHome from "./layouts/AppLayoutHome.vue";
+import LayoutLogin from "./layouts/AppLayoutLogin.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
-  { path: "/", component: Home, meta: { title: "Home" } },
   {
+    path: "/",
+    component: Home,
+    name: "Home",
+    meta: { title: "Home", layout: LayoutDashboard, showLink: false },
+  },
+  {
+    name: "Dashboard",
+    path: "/dashboard",
+    meta: {
+      title: "Dashboard",
+      layout: LayoutDashboard,
+      showLink: true,
+    },
+    component: DashboardPage,
+  },
+  {
+    name: "Teams",
+    path: "/teams",
+    meta: {
+      title: "Team Section",
+      layout: LayoutDashboard,
+      showLink: true,
+    },
+    component: TeamSection,
+  },
+  {
+    name: "Sidebar Component",
+    path: "/sidebar",
+    meta: {
+      title: "Sidebar",
+      layout: LayoutHome,
+      showLink: false,
+    },
+    component: Sidebar,
+  },
+  {
+    name: "Login",
+    path: "/login",
+    meta: {
+      title: "Login Page",
+      layout: LayoutLogin,
+      showLink: false,
+    },
+    component: Login,
+  },
+  {
+    name: "Support",
+    path: "/support",
+    meta: {
+      title: "Contact Support",
+      layout: LayoutDashboard,
+      showLink: true,
+    },
+    component: SupportPage,
+  },
+  {
+    name: "About",
     path: "/about",
-    meta: { title: "About", layout: "AppLayout" },
+    meta: { title: "About", layout: "AppLayout", showLink: true },
     component: About,
     // example of route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route
@@ -19,36 +80,11 @@ export const routes = [
     // component: () => import('./views/About.vue')
   },
   {
-    path: "/sidebar",
+    name: "Not Found",
+    path: "/:path(.*)",
+    component: NotFound,
     meta: {
-      title: "Sidebar",
-      layout: "AppLayoutHome",
+      showLink: false,
     },
-    component: Sidebar,
   },
-  {
-    path: "/teams",
-    meta: {
-      title: "Team Section",
-      layout: "AppLayoutHome",
-    },
-    component: TeamSection,
-  },
-  {
-    path: "/login",
-    meta: {
-      title: "Login Page",
-      layout: "AppLayoutLogin",
-    },
-    component: Login,
-  },
-  {
-    path: "/support",
-    meta: {
-      title: "Contact Support",
-      layout: "AppLayoutHome",
-    },
-    component: SupportPage,
-  },
-  { path: "/:path(.*)", component: NotFound },
 ];

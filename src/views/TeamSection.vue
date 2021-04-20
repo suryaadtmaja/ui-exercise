@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto container py-4">
+  <div class="mx-auto container py-4 px-4">
     <div class="heading py-4">
       <h3 class="font-bold text-2xl text-gray-900">Our Team</h3>
       <p class="description text-md text-gray-500">
