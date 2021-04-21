@@ -93,6 +93,6 @@ export default {
 
 <style scoped>
 .active-link {
-  @apply bg-gray-700 rounded px-2 py-2;
+  @apply bg-gray-700 rounded px-2 py-2 outline-none focus:outline-none;
 }
 </style>
