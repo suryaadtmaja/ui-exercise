@@ -6,10 +6,12 @@ import TeamSection from "./views/TeamSection.vue";
 import SupportPage from "./views/Support.vue";
 import Login from "./views/Login.vue";
 import DashboardPage from "./views/Dashboard.vue";
+import Blog from "./views/Blog.vue";
 
 import LayoutDashboard from "./layouts/AppLayoutDashboard.vue";
 import LayoutHome from "./layouts/AppLayoutHome.vue";
 import LayoutLogin from "./layouts/AppLayoutLogin.vue";
+import LayoutArticle from "./layouts/AppLayoutArticle.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
@@ -74,10 +76,12 @@ export const routes = [
     path: "/about",
     meta: { title: "About", layout: "AppLayout", showLink: true },
     component: About,
-    // example of route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import('./views/About.vue')
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+    meta: { title: "Blog", layout: LayoutArticle, showLink: true },
+    component: Blog,
   },
   {
     name: "Not Found",
