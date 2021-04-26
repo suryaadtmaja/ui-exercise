@@ -18,7 +18,9 @@ export default {
       () => route.meta,
       async (meta) => {
         try {
-          const component = await import(`./${meta.layout}.vue`);
+          const component = await import(
+            /* @vite-ignore */ `./${meta.layout}.vue`
+          );
           console.log(component, "heo");
           layout.value = component?.default.name || AppLayoutHome;
         } catch (e) {
