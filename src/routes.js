@@ -57,7 +57,7 @@ export const routes = [
     meta: {
       title: "Login Page",
       layout: LayoutLogin,
-      showLink: false,
+      showLink: true,
     },
     component: Login,
   },
