@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="topic">
+        <h1>Shopify draggable example</h1>
+        <h3>I'm not longer supporting this pen</h3>
+      </div>
+
+      <h2 class="checkpoint">Swappable</h2>
+      <div class="grid single flex-start-content halfs">
+        <transition-group
+          tag="div"
+          name="sortableCards"
+          class="
+            grid
+            single
+            fourths
+            flex-start-content
+            disable-marker
+            cards
+            clickable
+            sortable-animation
+          "
+          swappable
+        >
+          <div v-for="(card, index) in 3" :key="index" swapItem>
+            <h3>{{ index+1 }}</h3>
+          </div>
+        </transition-group>
+        <transition-group
+          tag="div"
+          name="sortableCards"
+          class="
+            grid
+            single
+            fourths
+            flex-start-content
+            disable-marker
+            cards
+            clickable
+            sortable-animation
+          "
+          swappable
+        >
+          <div
+            v-for="(card, index) in coloredCards"
+            :key="index"
+            :style="{ backgroundColor: card.color }"
+            swapItem
+          >
+            <h3>{{ index+1 }}</h3>
+          </div>
+        </transition-group>
+      </div>
+      <!-- 
+      <h2 class="checkpoint">Sortable</h2>
+      <div class="grid single flex-start-content halfs">
+        <transition-group
+          tag="div"
+          name="sortableCards"
+          class="
+            grid
+            single
+            fourths
+            flex-start-content
+            disable-marker
+            cards
+            clickable
+            sortable-animation
+          "
+          sortable
+        >
+          <div v-for="(_, index) in 7" :key="index" sortItem>
+            <h3>{{ index+1 }}</h3>
+          </div>
+        </transition-group>
+        <transition-group
+          tag="div"
+          name="sortableCards"
+          class="
+            grid
+            single
+            fifths
+            flex-start-content
+            disable-marker
+            cards
+            clickable
+            sortable-animation
+          "
+          sortable
+        >
+          <div
+            v-for="(card, index) in coloredCards"
+            :key="index"
+            :style="{ backgroundColor: card.color }"
+            sortItem
+          >
+            <h3>{{ index+1 }}</h3>
+          </div>
+        </transition-group>
+      </div>
+
+      <h2 class="checkpoint">Weekly todos</h2>
+      <div class="grid flex-start-content weekly-todos">
+        <transition-group
+          tag="div"
+          v-for="(weekDay, weekIndex) in weeklyTodos"
+          name="sortableCards"
+          class="
+            grid
+            flex-start-content
+            disable-marker
+            cards
+            clickable
+            sortable-animation
+          "
+          sortable
+        >
+          <p>Test</p>
+          <div
+            v-for="(todo, todoIndex) in weekDay"
+            :key="todoIndex"
+            :style="{ backgroundColor: todo.color }"
+            sortItem
+          >
+            <p>{{ todo.todo }}</p>
+          </div>
+        </transition-group>
+      </div> -->
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.2/lib/draggable.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
