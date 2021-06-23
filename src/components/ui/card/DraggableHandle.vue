@@ -5,7 +5,6 @@ export default {
   },
   inject: ["handleClass"],
   mounted() {
-    console.log(this.$el);
     this.$el.classList.add(this.handleClass);
   },
 

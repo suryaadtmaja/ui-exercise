@@ -4,8 +4,11 @@
       <draggable-list :value="dummy">
         <template v-slot="{ items }">
           <draggable-item v-for="i in items" :key="i.id">
-            <div class="sortable-items border border-gray-400 h-72">
-              <button @click="addSomething(i.id)">Hello {{ i }}</button>
+            <div
+              class="sortable-items border border-gray-400 h-72"
+              :tabindex="i.tabIndex"
+            >
+              <button @click="addSomething(i.id)">Hello {{ i.name }}</button>
               <draggable-handle>
                 <svg
                   class="
@@ -35,7 +38,6 @@
 </template>
 
 <script>
-import { Swappable } from "@shopify/draggable";
 import DraggableList from "../components/ui/card/DraggableList.vue";
 import DraggableItem from "../components/ui/card/DraggableItem.vue";
 import DraggableHandle from "../components/ui/card/DraggableHandle.vue";
@@ -49,28 +51,34 @@ export default {
     return {
       dummy: [
         {
-          name: "Hey",
+          name: "Hey 0",
           id: 0,
+          tabIndex: 0,
         },
         {
-          name: "Hey",
+          name: "Hey 1",
           id: 1,
+          tabIndex: 1,
         },
         {
-          name: "Hey",
+          name: "Hey 2",
           id: 2,
+          tabIndex: 2,
         },
         {
-          name: "Hey",
+          name: "Hey 3",
           id: 3,
+          tabIndex: 3,
         },
         {
-          name: "Hey",
+          name: "Hey 4",
           id: 4,
+          tabIndex: 4,
         },
         {
-          name: "Hey",
+          name: "Hey 5",
           id: 5,
+          tabIndex: 5,
         },
       ],
     };
@@ -80,27 +88,5 @@ export default {
       this.dummy[id].name = "ubah";
     },
   },
-  // mounted() {
-  //   const containerSelector = "#dashboard-container";
-  //   const containers = document.querySelector(containerSelector);
-
-  //   if (containers.length === 0) return false;
-  //   const swappable = new Swappable(containers, {
-  //     draggable: "[swapItem]",
-  //     delay: 0,
-  //   });
-  //   swappable.on("drag:start", () => {
-  //     console.log("drag:start");
-  //   });
-  //   swappable.on("swappable:swapped", () => {
-  //     console.log("drag:swapped");
-  //   });
-  //   swappable.on("drag:stop", () => {
-  //     console.log("drag:stop");
-  //   });
-  //   swappable.on("drag:move", () => {
-  //     console.log("drag:move");
-  //   });
-  // },
 };
 </script>
