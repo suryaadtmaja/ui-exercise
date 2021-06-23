@@ -1,5 +1,14 @@
 <script>
 import { Swappable } from "@shopify/draggable";
+
+function move(items, original, over) {
+  const originalSource = original.tabIndex;
+  const newSource = over.tabIndex;
+  items[originalSource].tabIndex = over.tabIndex;
+  items[newSource].tabIndex = original.tabIndex;
+  return items;
+}
+
 export default {
   props: {
     value: {
@@ -9,6 +18,7 @@ export default {
       default: "sortable-handle",
     },
   },
+  emits: ["update:value"],
   provide() {
     return {
       handleClass: this.handleClass,
@@ -37,10 +47,15 @@ export default {
     swappable.on("drag:start", () => {
       console.log("drag:start");
     });
-    swappable.on("swappable:swapped", () => {
-      console.log("drag:swapped");
+    swappable.on("swappable:swapped", (data) => {
+      const originalSource = data.dragEvent.data.originalSource;
+      const newSource = data.dragEvent.data.over;
+      console.log("old", data.dragEvent.data.originalSource.tabIndex);
+      console.log("new", data.dragEvent.data.over.tabIndex);
+      this.$emit("update:value", move(this.value, originalSource, newSource));
     });
     swappable.on("drag:stop", () => {
+      // this.$emit("update:value");
       console.log("drag:stop");
     });
     swappable.on("drag:move", () => {
