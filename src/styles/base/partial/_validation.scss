@@ -1,0 +1,11 @@
+.is-error {
+  --tw-border-opacity: 1;
+  border-width: 1px;
+  border-color: rgba(239, 68, 68, var(--tw-border-opacity));
+}
+
+.message-error {
+  --tw-text-opacity: 0.8;
+  color: rgba(239, 68, 68, var(--tw-text-opacity));
+  font-size: 0.5 rem;
+}
