@@ -1,5 +1,4 @@
 import Home from "./views/Home.vue";
-import About from "./views/About.vue";
 import NotFound from "./views/NotFound.vue";
 import Sidebar from "./views/Sidebar.vue";
 import TeamSection from "./views/TeamSection.vue";
@@ -70,12 +69,6 @@ export const routes = [
       showLink: true,
     },
     component: SupportPage,
-  },
-  {
-    name: "About",
-    path: "/about",
-    meta: { title: "About", layout: "AppLayout", showLink: true },
-    component: About,
   },
   {
     name: "Blog",
