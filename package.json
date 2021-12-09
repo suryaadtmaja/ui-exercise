@@ -23,6 +23,6 @@
     "autoprefixer": "^10.2.6",
     "sass": "^1.36.0",
     "tailwindcss": "^2.2.4",
-    "vite": "^2.3.8"
+    "vite": "^2.7.1"
   }
 }
